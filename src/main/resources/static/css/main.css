@@ -1,0 +1,95 @@
+/*Centering the tree*/
+div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*List settings*/
+
+/*Remove list dots*/
+ul {
+    list-style: none;
+}
+
+/*Increase font size*/
+ul.tree {
+    font-size: 150%;
+}
+
+/*Some enhancements for better view*/
+span {
+    width: 10em;
+    display: block;
+    cursor: pointer;
+}
+
+/*Shrinking list*/
+li[aria-expanded="false"] > ul {
+    display: none;
+}
+
+/*Expanding list*/
+li[aria-expanded="true"] > ul {
+    display: block;
+}
+
+/*Icons (glyphicon)*/
+
+span:before {
+    font-family: "Glyphicons Halflings";
+}
+
+/*Root*/
+.root > span:before {
+    content: '\e021';
+}
+
+/*Closed folder*/
+.folder[aria-expanded="false"] > span:before {
+    content: "\e117";
+}
+
+/*Open folder*/
+.folder[aria-expanded="true"] > span:before {
+    content: "\e118";
+}
+
+/*Loading spinner*/
+.folder.loading[aria-expanded="true"] > span:before {
+    font-family: FontAwesome;
+    content: '\f110';
+    animation: fa-spin 2s infinite linear;
+}
+
+/*File*/
+.doc > span:before {
+    content: "\e022";
+}
+
+/*Hovering and focusing*/
+
+/*Focused item icon color*/
+.folder > span.focus:before,
+.doc > span.focus:before {
+    color: darkgoldenrod;
+}
+
+/*Hover item style*/
+.folder > span:hover,
+.doc > span:hover {
+    background-color: #DDDDDD;
+}
+
+span.over {
+    border: 2px dashed #000;
+}
+
+
+/*Horizontal lines*/
+ul.tree ul {
+    border-left: .25em solid gray;
+    margin-left: .5em;
+}
