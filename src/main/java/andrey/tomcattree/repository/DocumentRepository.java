@@ -10,7 +10,7 @@ import java.util.List;
 public interface DocumentRepository extends CrudRepository<Document, Long>{
 
     default List<Document> findRoots() {
-        return findChildrenByParent(null);
+        return findChildrenByParent(0L);
     }
 
     List<Document> findChildrenByParent(Long parent);

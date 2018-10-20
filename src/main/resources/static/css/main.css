@@ -1,5 +1,5 @@
 /*Centering the tree*/
-div {
+#documents_wrap {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -17,6 +17,12 @@ ul {
 /*Increase font size*/
 ul.tree {
     font-size: 150%;
+}
+
+/*Horizontal lines*/
+ul.tree ul {
+    border-left: .25em solid gray;
+    margin-left: .7em;
 }
 
 /*Some enhancements for better view*/
@@ -40,56 +46,59 @@ li[aria-expanded="true"] > ul {
 
 span:before {
     font-family: "Glyphicons Halflings";
+    margin-right: 0.3em;
+    margin-left: 0.3em;
 }
 
 /*Root*/
 .root > span:before {
-    content: '\e021';
+    content: '\e021 ';
 }
 
 /*Closed folder*/
 .folder[aria-expanded="false"] > span:before {
-    content: "\e117";
+    content: '\e117 ';
 }
 
 /*Open folder*/
 .folder[aria-expanded="true"] > span:before {
-    content: "\e118";
+    content: '\e118 ';
 }
 
 /*Loading spinner*/
 .folder.loading[aria-expanded="true"] > span:before {
     font-family: FontAwesome;
-    content: '\f110';
+    content: '\f110 ';
     animation: fa-spin 2s infinite linear;
 }
 
 /*File*/
-.doc > span:before {
-    content: "\e022";
+.file > span:before {
+    content: '\e022 ';
 }
 
 /*Hovering and focusing*/
 
 /*Focused item icon color*/
-.folder > span.focus:before,
-.doc > span.focus:before {
+span.focus:before {
     color: darkgoldenrod;
 }
 
 /*Hover item style*/
-.folder > span:hover,
-.doc > span:hover {
+*:not(.context-menu-item) > span:hover {
     background-color: #DDDDDD;
 }
 
+
+/*Drag border*/
 span.over {
-    border: 2px dashed #000;
+    border: 2px solid green;
+    border-image-source: linear-gradient(lightgreen, darkgreen);
+    border-image-slice: 2;
 }
 
 
-/*Horizontal lines*/
-ul.tree ul {
-    border-left: .25em solid gray;
-    margin-left: .5em;
+/*Text edit cursor*/
+.editable {
+    cursor: text;
 }

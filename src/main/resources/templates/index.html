@@ -3,85 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>File Tree</title>
-    <!--Import Jquery-->
+    <!--Jquery-->
     <script src="js/jquery-3.3.1.min.js"></script>
-
+    <!--Jquery Context Menu-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
-
-    <!--Import our script-->
+    <!--Sweet Alerts-->
+    <script src="js/sweetalert2.js"></script>
+    <!--Our script-->
     <script type="text/javascript" src="js/main.js"></script>
-    <!--To center the tree-->
+
+    <!--Our style-->
     <link rel="stylesheet" href="css/main.css"/>
+    <!--Glyphicon-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Jquery Context Menu-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+    <!--Font Awesome context menu icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id="documents_wrap">
     <ul class="tree">
-        <li class="root" id="folder_0">
-            <span> Root</span>
-            <ul id="root_group"></ul>
+        <li class="root" id="item_0">
+            <span>Root</span>
+            <ul></ul>
         </li>
     </ul>
-
 </div>
-
-<!--<h3 id="tree_label">-->
-    <!--File Viewer-->
-<!--</h3>-->
-<!--<ul class="tree" aria-labelledby="tree_label">-->
-    <!--<li class="folder" aria-expanded="false">-->
-      <!--<span> Projects</span>-->
-        <!--<ul class="group">-->
-            <!--<li class="doc">-->
-                <!--<span draggable=true> project-1.docx</span>-->
-            <!--</li>-->
-            <!--<li class="doc">-->
-                <!--<span draggable=true> project-2.docx</span>-->
-            <!--</li>-->
-            <!--<li class="folder" aria-expanded="false">-->
-                <!--<span draggable=true> Project 3</span>-->
-                <!--<ul class="group">-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-3A.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-3B.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-3C.docx</span>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</li>-->
-            <!--<li class="doc">-->
-                <!--<span draggable=true> project-4.docx</span>-->
-            <!--</li>-->
-            <!--<li class="folder" aria-expanded="false">-->
-                <!--<span draggable=true> Project 5</span>-->
-                <!--<ul class="group">-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5A.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5B.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5C.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5D.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5E.docx</span>-->
-                    <!--</li>-->
-                    <!--<li class="doc">-->
-                        <!--<span draggable=true> project-5F.docx</span>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</li>-->
-<!--</ul>-->
 </body>

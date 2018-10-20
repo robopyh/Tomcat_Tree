@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 
 /*
 fill db with test data
-create and save 10 items
- */
+create 10 folders and 20 files
+*/
 
 @Component
 public class DataLoader implements ApplicationRunner{
 
-    private DocumentRepository documentRepository;
+    private final DocumentRepository documentRepository;
 
     public DataLoader (DocumentRepository documentRepository) {
         this.documentRepository = documentRepository;
@@ -21,15 +21,26 @@ public class DataLoader implements ApplicationRunner{
 
     @Override
     public void run(ApplicationArguments args) {
-        // generated IDs starts with 1
-        for (int i = 1; i <= 10; i++) {
+        int FOLDERS_COUNT = 10;
+        int FILES_COUNT = 20;
+        // Folders
+        // auto-generated IDs starts with 1
+        for (int i = 1; i <= FOLDERS_COUNT; i++) {
             // random parent ID
-            // if ID = 0, set it to null
-            long random = (long) (Math.random() * i);
-            Long parent = random == 0 ? null : random;
+            Long parent = (long) (Math.random() * i);
 
             // create and save new item
-            Document document = new Document(parent, "folder " + i, true);
+            Document document = new Document(parent, "Folder " + i, true);
+            documentRepository.save(document);
+        }
+
+        // Files
+        for (int i = 1; i <= FILES_COUNT; i++) {
+            // random parent ID
+            Long parent = (long) (Math.random() * FOLDERS_COUNT);
+
+            // create and save new item
+            Document document = new Document(parent, "file_" + i, false);
             documentRepository.save(document);
         }
     }
