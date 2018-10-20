@@ -66,7 +66,7 @@ const newItem = function (item, type) {
         }
         // create new element and let user edit it name
         if (item.attr('aria-expanded') === 'false')
-            item.attr('aria-expanded', 'true')
+            item.attr('aria-expanded', 'true');
         const newItem = createAndAppendNewItem(item, id, 'New ' + type, type);
         editItem(newItem.find('span'));
     });
